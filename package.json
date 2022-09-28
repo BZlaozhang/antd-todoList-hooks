@@ -1,0 +1,54 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "start:us": "cross-env APP_REGION=us umi dev",
+    "build": "umi build",
+    "build:us": "cross-env APP_REGION=us umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "antd": "^4.23.2",
+    "decompress-response": "^8.0.0",
+    "fflate": "^0.7.3",
+    "gunzip-file": "^0.1.1",
+    "jszip": "^3.10.0",
+    "lodash": "^4.17.21",
+    "pako": "^2.0.4",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.26",
+    "unzip": "^0.1.11",
+    "uzip": "^0.20201231.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/pako": "^2.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/uzip": "^0.20201231.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.26",
+    "cross-env": "^7.0.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "yorkie": "^2.0.0"
+  }
+}
